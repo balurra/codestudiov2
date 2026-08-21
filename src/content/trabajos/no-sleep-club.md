@@ -10,6 +10,7 @@ cover: null
 tagline: La identidad visual de las noches más largas de la ciudad.
 order: 14
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

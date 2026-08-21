@@ -1,17 +1,17 @@
 ---
-client: DAKOTA
+client: SPEED
 type: CONTENIDO DE MARCA
-category: Fotografía
+category: Campañas
 year: 2025
 location: Uruguay
 video: ""
 cloudinaryId: null
 cover: null
-tagline: Trabajo para Dakota.
-order: 21
+tagline: Trabajo para Speed.
+order: 19
 publish: true
-highlight: false
 featured: false
+highlight: false
 credits:
   - role: Producción
     name: Code Studio
@@ -20,6 +20,6 @@ credits:
 stats: []
 ---
 
-Producción audiovisual para Dakota.
+Producción audiovisual para Speed.
 
-*Pieza completa disponible en codestudio.com.uy/dakota — pendiente de completar descripción detallada.*
+*Pendiente de completar descripción y material audiovisual.*

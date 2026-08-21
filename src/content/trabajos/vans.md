@@ -1,5 +1,5 @@
 ---
-client: VANS
+client: VANS × PAULO LONDRA
 type: PRODUCCIÓN INTEGRAL DE EVENTO
 category: Campañas
 year: 2025
@@ -8,8 +8,9 @@ video: ""
 cloudinaryId: null
 cover: null
 tagline: La apertura de la nueva tienda, en una sola pieza.
-order: 20
+order: 3
 publish: true
+highlight: true
 featured: false
 credits:
   - role: Producción audiovisual

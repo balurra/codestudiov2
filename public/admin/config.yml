@@ -39,8 +39,9 @@ collections:
         name: category
         widget: select
         options:
-          - Shows
-          - Campañas
+          - { label: "Shows & Fiestas", value: Shows }
+          - { label: "Eventos & Campañas", value: Campañas }
+          - { label: "Fotografía Producto", value: Fotografía }
       - { label: "Año", name: year, widget: number, value_type: int, min: 2000, max: 2100 }
       - { label: "Ubicación", name: location, widget: string, default: "Montevideo, Uruguay" }
       - { label: "Video URL", name: video, widget: string }
@@ -49,7 +50,8 @@ collections:
       - { label: "Frase destacada", name: tagline, widget: string }
       - { label: "Orden", name: order, widget: number, value_type: int, default: 99 }
       - { label: "Publicado", name: publish, widget: boolean, default: true }
-      - { label: "Destacado en home", name: featured, widget: boolean, default: false }
+      - { label: "En el slideshow del home", name: featured, widget: boolean, default: false }
+      - { label: "En Proyectos destacados", name: highlight, widget: boolean, default: false }
       - label: Creditos
         name: credits
         widget: list

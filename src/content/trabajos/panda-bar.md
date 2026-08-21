@@ -1,15 +1,16 @@
 ---
 client: PANDA BAR
 type: CONTENIDO DE MARCA
-category: Campañas
+category: Fotografía
 year: 2025
 location: Montevideo, Uruguay
 video: ""
 cloudinaryId: null
 cover: null
 tagline: Trabajo para Panda Bar.
-order: 29
+order: 22
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

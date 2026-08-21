@@ -8,8 +8,9 @@ video: ""
 cloudinaryId: null
 cover: null
 tagline: La banda argentina llenando el Antel Arena.
-order: 16
+order: 13
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

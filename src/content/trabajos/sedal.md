@@ -8,8 +8,9 @@ video: ""
 cloudinaryId: null
 cover: null
 tagline: Cinco cápsulas pensadas como nativas de TikTok.
-order: 23
+order: 42
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

@@ -8,8 +8,9 @@ video: ""
 cloudinaryId: null
 cover: null
 tagline: La edición 17 de la cumbre techie más grande de la región.
-order: 34
+order: 33
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

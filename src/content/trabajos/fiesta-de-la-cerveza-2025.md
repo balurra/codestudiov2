@@ -8,8 +8,9 @@ video: /videos/clips/fiesta-de-la-cerveza-2025.mp4
 cloudinaryId: codestudio/fdlc-2025-16-9
 cover: /videos/posters/fiesta-de-la-cerveza-2025.jpg
 tagline: 'La séptima edición: 12 piezas en vivo y un aftermovie de cierre.'
-order: 8
+order: 11
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Dirección

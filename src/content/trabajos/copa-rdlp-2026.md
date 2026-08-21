@@ -1,15 +1,16 @@
 ---
 client: COPA RDLP
 type: AFTERMOVIE
-category: Shows
+category: Campañas
 year: 2026
 location: Punta del Este, Uruguay
 video: /videos/clips/copa-rdlp-2026.mp4
 cloudinaryId: codestudio/aftermoviecopardlp26
 cover: /videos/posters/copa-rdlp-2026.jpg
 tagline: El campeonato cubierto de principio a fin.
-order: 4
+order: 7
 publish: true
+highlight: true
 featured: true
 credits:
   - role: Dirección

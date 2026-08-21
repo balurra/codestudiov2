@@ -8,8 +8,9 @@ video: /videos/clips/gira-fito-paez.mp4
 cloudinaryId: codestudio/fito-estadio-uno-la-plata
 cover: /videos/posters/gira-fito-paez.jpg
 tagline: Dos años acompañando a Fito en las giras El Amor Después del Amor y Páez4030.
-order: 3
+order: 5
 publish: true
+highlight: true
 featured: true
 credits:
   - role: Producción

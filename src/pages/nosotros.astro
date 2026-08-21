@@ -6,31 +6,30 @@ import { PAGES_SEO } from '@/consts';
 
 const seo = PAGES_SEO.nosotros;
 
-const brandsTop = [
-  { src: '/logos/logo-vertical-negativo.png', alt: 'Gobierno de Canelones' },
-  { src: '/logos/mercado-libre.png', alt: 'Mercado Libre' },
+/**
+ * Faltan los logos de ANTEL, OFI, LUCERO, SPEED, NTVG y CUARTETO DE NOS:
+ * cuando lleguen los archivos, se agregan acá.
+ */
+const brands = [
   { src: '/logos/cif.png', alt: 'CIF' },
-  { src: '/logos/sedal.png', alt: 'Sedal' },
+  { src: '/logos/logo-vertical-negativo.png', alt: 'Intendencia de Canelones' },
   { src: '/logos/vns.png', alt: 'Vans' },
-  { src: '/logos/volvo.png', alt: 'Volvo' },
-  { src: '/logos/itau.png', alt: 'Itaú' },
+  { src: '/logos/fito-paez.png', alt: 'Fito Páez' },
+  { src: '/logos/college.png', alt: 'College' },
 ];
 
-const brandsBottom = [
-  { src: '/logos/monster-energy-seeklogo.png', alt: 'Monster Energy' },
-  { src: '/logos/assist-card-seeklogo.png', alt: 'Assist Card' },
-  { src: '/logos/foton.png', alt: 'Foton' },
-  { src: '/logos/college.png', alt: 'College' },
-  { src: '/logos/fito-paez.png', alt: 'Fito Páez' },
-  { src: '/logos/deicas.png', alt: 'Familia Deicas' },
-  { src: '/logos/britos.png', alt: 'Britos Hnos' },
-];
+/**
+ * El marquee anima hasta -50% del track, así que cada mitad tiene que ser
+ * más ancha que la pantalla o se ve un hueco al cerrar el loop. Con 5 logos
+ * no alcanza: repetimos la lista para llenar la mitad.
+ */
+const brandsHalf = [...brands, ...brands];
 
 const team = [
-  { name: 'Valentí Prieto', role: 'Co-fundador', photo: '/team/valentin' },
-  { name: 'Franco Lorenzi', role: 'Co-fundador', photo: '/team/franco' },
-  { name: 'Santiago Mondo', role: 'Co-fundador', photo: '/team/santiago' },
-  { name: 'Mateo Rodríguez Murias', role: 'Co-fundador', photo: '/team/mateo' },
+  { name: 'Valentí Prieto', role: 'Cofundador', photo: '/team/valentin' },
+  { name: 'Franco Lorenzi', role: 'Cofundador', photo: '/team/franco' },
+  { name: 'Santiago Mondo', role: 'Socio', photo: '/team/santiago' },
+  { name: 'Mateo Rodríguez Murias', role: 'Socio', photo: '/team/mateo' },
 ];
 
 const pillars = [
@@ -69,7 +68,6 @@ const workingPhotos = [
 
   <!-- MANIFIESTO -->
   <section class="manifesto reveal" id="manifestoSection">
-    <span class="manifesto-tag">Manifiesto</span>
     <h2 class="manifesto-lead">
       Code Studio es una productora audiovisual que trabaja
       <span class="accent">desde la historia.</span>
@@ -82,6 +80,28 @@ const workingPhotos = [
       Trabajamos con marcas y artistas que entienden que una pieza audiovisual no es solo lo que se
       ve — es lo que queda.
     </p>
+  </section>
+
+  <!-- EQUIPO EN ACCIÓN (fotos del equipo trabajando, junto a la frase) -->
+  <section class="team-action reveal" id="teamActionSection">
+    <div class="team-action-grid">
+      {
+        workingPhotos.map((ph) => (
+          <div class="photo-slot">
+            <picture>
+              <source srcset={`${ph.src}.webp`} type="image/webp" />
+              <img src={`${ph.src}.jpg`} alt={ph.alt} loading="lazy" decoding="async" />
+            </picture>
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="bts-video">
+      <video autoplay muted loop playsinline preload="metadata" poster="/team/bts.jpg">
+        <source src="/team/bts.mp4" type="video/mp4" />
+      </video>
+    </div>
   </section>
 
   <!-- 2. PILARES (sin números, nombres grandes) -->
@@ -150,29 +170,6 @@ const workingPhotos = [
     </div>
   </section>
 
-  <!-- 4. EQUIPO EN ACCIÓN (fotos del equipo trabajando) -->
-  <section class="team-action reveal" id="teamActionSection">
-    <p class="team-action-head">El equipo en acción</p>
-    <div class="team-action-grid">
-      {
-        workingPhotos.map((ph) => (
-          <div class="photo-slot">
-            <picture>
-              <source srcset={`${ph.src}.webp`} type="image/webp" />
-              <img src={`${ph.src}.jpg`} alt={ph.alt} loading="lazy" decoding="async" />
-            </picture>
-          </div>
-        ))
-      }
-    </div>
-
-    <div class="bts-video">
-      <video autoplay muted loop playsinline preload="metadata" poster="/team/bts.jpg">
-        <source src="/team/bts.mp4" type="video/mp4" />
-      </video>
-    </div>
-  </section>
-
   <!-- 5. SLOGAN -->
   <section class="slogan reveal" id="sloganSection">
     <span class="slogan-line">Nacimos de una conexión real.</span>
@@ -188,7 +185,7 @@ const workingPhotos = [
     <div class="marquee">
       <div class="marquee-track">
         {
-          brandsTop.map((b) => (
+          brandsHalf.map((b) => (
             <div class="marquee-item">
               <picture>
                 <source srcset={b.src.replace(/\.png$/, '.webp')} type="image/webp" />
@@ -198,32 +195,7 @@ const workingPhotos = [
           ))
         }
         {
-          brandsTop.map((b) => (
-            <div class="marquee-item" aria-hidden="true">
-              <picture>
-                <source srcset={b.src.replace(/\.png$/, '.webp')} type="image/webp" />
-                <img src={b.src} alt="" loading="eager" decoding="async" />
-              </picture>
-            </div>
-          ))
-        }
-      </div>
-    </div>
-
-    <div class="marquee reverse">
-      <div class="marquee-track">
-        {
-          brandsBottom.map((b) => (
-            <div class="marquee-item">
-              <picture>
-                <source srcset={b.src.replace(/\.png$/, '.webp')} type="image/webp" />
-                <img src={b.src} alt={b.alt} loading="eager" decoding="async" />
-              </picture>
-            </div>
-          ))
-        }
-        {
-          brandsBottom.map((b) => (
+          brandsHalf.map((b) => (
             <div class="marquee-item" aria-hidden="true">
               <picture>
                 <source srcset={b.src.replace(/\.png$/, '.webp')} type="image/webp" />
@@ -322,17 +294,6 @@ const workingPhotos = [
     margin: 0 auto;
     padding: clamp(80px, 12vh, 140px) 5vw clamp(40px, 6vh, 80px);
     text-align: center;
-  }
-
-  .manifesto-tag {
-    display: inline-block;
-    font-size: 11px;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    /* Negro para contraste WCAG sobre milk */
-    color: var(--black);
-    font-weight: 500;
-    margin-bottom: 32px;
   }
 
   .manifesto-lead {
@@ -479,17 +440,6 @@ const workingPhotos = [
     padding: 0 5vw clamp(80px, 12vh, 140px);
   }
 
-  .team-action-head {
-    display: inline-block;
-    font-size: 11px;
-    letter-spacing: 0.32em;
-    text-transform: uppercase;
-    /* Negro para contraste WCAG sobre milk */
-    color: var(--black);
-    font-weight: 500;
-    margin-bottom: 36px;
-  }
-
   .team-action-grid {
     display: grid;
     grid-template-columns: 1.4fr 1fr 1fr;
@@ -573,24 +523,15 @@ const workingPhotos = [
     mask-image: linear-gradient(to right, transparent 0%, #000 8%, #000 92%, transparent 100%);
   }
 
-  .marquee + .marquee { margin-top: clamp(20px, 3vh, 36px); }
-
   .marquee-track {
     display: flex;
     width: max-content;
     animation: marqueeL 48s linear infinite;
   }
 
-  .marquee.reverse .marquee-track { animation: marqueeR 56s linear infinite; }
-
   @keyframes marqueeL {
     from { transform: translateX(0); }
     to { transform: translateX(-50%); }
-  }
-
-  @keyframes marqueeR {
-    from { transform: translateX(-50%); }
-    to { transform: translateX(0); }
   }
 
   /* Cajita fija para cada logo — width + height uniformes. La <img>

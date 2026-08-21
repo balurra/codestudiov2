@@ -8,8 +8,9 @@ video: ""
 cloudinaryId: codestudio/csb-2026-v5
 cover: null
 tagline: 'Branding, campaña y cobertura: la edición que armamos de punta a punta.'
-order: 12
+order: 9
 publish: true
+highlight: true
 featured: false
 credits:
   - role: 'Branding & dirección de arte'

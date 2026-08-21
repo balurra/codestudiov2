@@ -8,8 +8,9 @@ video: /videos/clips/la-bajada-2025.mp4
 cloudinaryId: codestudio/aftermovie-la-bajada-5
 cover: /videos/posters/la-bajada-2025.jpg
 tagline: La fiesta que abre la temporada.
-order: 10
+order: 12
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Dirección

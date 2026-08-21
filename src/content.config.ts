@@ -11,7 +11,7 @@ const trabajos = defineCollection({
   schema: z.object({
     client: z.string(),
     type: z.string(),
-    category: z.enum(['Shows', 'Campañas']),
+    category: z.enum(['Shows', 'Campañas', 'Fotografía']),
     year: z.number().int().min(2000).max(2100),
     location: z.string(),
     /** Path absoluto desde public/ (ej: "/videos/foo.mp4"). Fallback si no hay cloudinaryId */
@@ -28,6 +28,8 @@ const trabajos = defineCollection({
     publish: z.boolean().default(true),
     /** Si true, aparece en el slideshow del home. Por defecto false. */
     featured: z.boolean().default(false),
+    /** Si true, aparece en la grilla "Proyectos destacados" del home. Por defecto false. */
+    highlight: z.boolean().default(false),
     credits: z
       .array(
         z.object({

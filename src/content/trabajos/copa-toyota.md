@@ -8,8 +8,9 @@ video: ""
 cloudinaryId: null
 cover: null
 tagline: Tres días de surf latinoamericano, en una sola pieza.
-order: 31
+order: 34
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

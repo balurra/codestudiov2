@@ -9,7 +9,12 @@ import Layout from '@layouts/Layout.astro';
 import Header from '@components/Header.astro';
 import Footer from '@components/Footer.astro';
 import Gallery from '@components/Gallery.astro';
-import { getAllTrabajos, resolveVideo } from '@lib/trabajos';
+import {
+  getAllTrabajos,
+  resolveVideo,
+  CATEGORY_LABELS,
+  CATEGORY_SLUGS,
+} from '@lib/trabajos';
 import { SITE } from '@/consts';
 
 const base = (Astro.site ?? new URL(SITE.url)).origin;
@@ -25,6 +30,7 @@ export async function getStaticPaths() {
 const { work } = Astro.props;
 const { Content } = await render(work);
 const video = resolveVideo(work.data);
+const hasVideo = Boolean(video.src);
 
 const pageTitle = `${work.data.client} — Code Studio`;
 // Description rica: tagline + tipo + cliente + año + ubicación.
@@ -38,7 +44,8 @@ const pageDescription = [
   .join(' ')
   .slice(0, 160);
 
-const categorySlug = work.data.category === 'Campañas' ? 'campanas' : 'shows';
+const categorySlug = CATEGORY_SLUGS[work.data.category];
+const categoryLabel = CATEGORY_LABELS[work.data.category];
 
 const videoJsonLd = {
   '@context': 'https://schema.org',
@@ -60,17 +67,17 @@ const videoJsonLd = {
   title={pageTitle}
   description={pageDescription}
   ogType="article"
-  jsonLd={videoJsonLd}
+  jsonLd={hasVideo ? videoJsonLd : undefined}
 >
   <Header />
 
   <div class="back-bar">
-    <a href={`/${categorySlug}`}>← Volver a {work.data.category}</a>
+    <a href={`/${categorySlug}`}>← Volver a {categoryLabel}</a>
   </div>
 
   <section class="work-hero">
     <div class="work-meta">
-      <span class="work-cat">{work.data.category}</span>
+      <span class="work-cat">{categoryLabel}</span>
       <span class="work-year">{work.data.year}</span>
       <span class="work-loc">{work.data.location}</span>
     </div>
@@ -79,11 +86,15 @@ const videoJsonLd = {
       <span class="client">{work.data.client}</span>
     </h1>
     {work.data.tagline && <p class="work-tagline">"{work.data.tagline}"</p>}
-    <div class="video-wrap">
-      <video controls preload="metadata" playsinline poster={video.poster}>
-        <source src={video.src} type="video/mp4" />
-      </video>
-    </div>
+    {
+      hasVideo && (
+        <div class="video-wrap">
+          <video controls preload="metadata" playsinline poster={video.poster}>
+            <source src={video.src} type="video/mp4" />
+          </video>
+        </div>
+      )
+    }
   </section>
 
   <section class="work-body">

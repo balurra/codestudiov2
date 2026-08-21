@@ -1,15 +1,16 @@
 ---
 client: WINE SECRET
 type: AFTERMOVIE + FOTOGRAFÍA
-category: Campañas
+category: Fotografía
 year: 2025
 location: Paysandu Bar, Uruguay
 video: ""
 cloudinaryId: null
 cover: null
 tagline: La segunda edición de Bares, en un bar de 114 años.
-order: 25
+order: 23
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

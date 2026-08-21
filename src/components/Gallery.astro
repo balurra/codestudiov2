@@ -5,16 +5,22 @@
  * Generada en build time (sin JS necesario para mostrar la grid).
  * El JS sólo agrega el efecto 3D tilt en hover.
  */
-import { getTrabajosByCategory, type TrabajoCategory } from '@lib/trabajos';
+import {
+  getTrabajosByCategory,
+  getHighlightTrabajos,
+  CATEGORY_LABELS,
+  type TrabajoCategory,
+} from '@lib/trabajos';
 
 interface Props {
-  filter?: TrabajoCategory | 'all';
+  filter?: TrabajoCategory | 'all' | 'highlight';
   limit?: number;
 }
 
 const { filter = 'all', limit } = Astro.props;
 
-const allWorks = await getTrabajosByCategory(filter);
+const allWorks =
+  filter === 'highlight' ? await getHighlightTrabajos() : await getTrabajosByCategory(filter);
 const works = limit ? allWorks.slice(0, limit) : allWorks;
 
 const PALETTES = [
@@ -77,7 +83,7 @@ const PALETTES = [
             </div>
             <div class="cinf">
               <div>
-                <div class="ccat">{w.data.category}</div>
+                <div class="ccat">{CATEGORY_LABELS[w.data.category]}</div>
                 <h3 class="cnm">{w.data.client}</h3>
               </div>
               <span class="cyr">{w.data.year}</span>

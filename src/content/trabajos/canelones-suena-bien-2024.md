@@ -8,8 +8,9 @@ video: ""
 cloudinaryId: null
 cover: null
 tagline: El inicio de la gira de los 30 años, en el marco del CSB.
-order: 15
+order: 31
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

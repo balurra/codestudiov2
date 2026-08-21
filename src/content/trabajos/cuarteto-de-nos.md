@@ -8,8 +8,9 @@ video: /videos/clips/cuarteto-de-nos.mp4
 cloudinaryId: codestudio/cuarteto-de-nos-colonia-sin-placa
 cover: /videos/posters/cuarteto-de-nos.jpg
 tagline: La banda en Colonia, sin placa.
-order: 9
+order: 10
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Dirección

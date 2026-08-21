@@ -8,8 +8,9 @@ video: ""
 cloudinaryId: null
 cover: null
 tagline: Rock y orquesta sinfónica en un mismo escenario.
-order: 13
+order: 16
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

@@ -45,7 +45,6 @@ export const CONTACT = {
 export const SOCIAL = {
   instagram: 'https://www.instagram.com/codestudio.uy/',
   linkedin: 'https://www.linkedin.com/company/codestudiouy/',
-  vimeo: 'https://vimeo.com/user208872375',
 } as const;
 
 /**
@@ -69,16 +68,22 @@ export const PAGES_SEO = {
     keywords: ['productora audiovisual uruguay', 'video uruguay', 'comerciales', 'aftermovies'],
   },
   shows: {
-    title: 'Shows · Aftermovies, festivales y coberturas · Code Studio',
+    title: 'Shows & Fiestas · Aftermovies y coberturas · Code Studio',
     description:
-      'Aftermovies, coberturas en vivo y registros audiovisuales para shows, festivales y eventos en Uruguay. Fito Páez, FDLC, Canelones Suena Bien y más.',
-    keywords: ['aftermovie uruguay', 'cobertura festival uruguay', 'video shows en vivo', 'productora eventos'],
+      'Aftermovies, coberturas en vivo y registros audiovisuales para shows, fiestas y festivales en Uruguay. Cuarteto de Nos, Fiesta de la Cerveza, NTVG y más.',
+    keywords: ['aftermovie uruguay', 'cobertura festival uruguay', 'video shows en vivo', 'productora fiestas'],
   },
   campanas: {
-    title: 'Campañas · Producción audiovisual publicitaria · Code Studio',
+    title: 'Eventos & Campañas · Producción audiovisual · Code Studio',
     description:
-      'Comerciales, branded content y campañas audiovisuales para marcas en Uruguay. Vans, Sedal, Mercado Libre, Monster y más.',
-    keywords: ['comerciales uruguay', 'branded content', 'publicidad audiovisual', 'spots tv'],
+      'Comerciales, branded content y cobertura de eventos para marcas en Uruguay. Vans, CIF, Intendencia de Canelones, Speed, OFI y más.',
+    keywords: ['comerciales uruguay', 'branded content', 'cobertura de eventos', 'publicidad audiovisual'],
+  },
+  fotografia: {
+    title: 'Fotografía Producto · Code Studio · Productora audiovisual',
+    description:
+      'Fotografía de producto para gastronomía y marcas en Uruguay. Dakota, Panda Bar, Wine Secret, Ranch Café y Naru Sushi.',
+    keywords: ['fotografia de producto uruguay', 'fotografia gastronomica', 'foto producto montevideo'],
   },
   nosotros: {
     title: 'Nosotros · Code Studio · Productora audiovisual Uruguay',
@@ -116,6 +121,6 @@ export function buildOrganizationSchema(baseUrl: string) {
       '@type': 'PostalAddress',
       addressCountry: 'UY',
     },
-    sameAs: [SOCIAL.instagram, SOCIAL.linkedin, SOCIAL.vimeo],
+    sameAs: [SOCIAL.instagram, SOCIAL.linkedin],
   };
 }

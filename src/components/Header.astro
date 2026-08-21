@@ -5,6 +5,7 @@
  * El index tiene su propio header inline porque maneja el slideshow + intro.
  */
 import { SITE } from '@/consts';
+import { CATEGORY_LABELS } from '@lib/trabajos';
 
 interface Props {
   /** Path actual para resaltar el link activo (ej: "/contacto") */
@@ -16,8 +17,9 @@ interface Props {
 const { current = '', light = false } = Astro.props;
 
 const links = [
-  { href: '/shows', label: 'Shows' },
-  { href: '/campanas', label: 'Campañas' },
+  { href: '/shows', label: CATEGORY_LABELS.Shows },
+  { href: '/campanas', label: CATEGORY_LABELS.Campañas },
+  { href: '/fotografia', label: CATEGORY_LABELS.Fotografía },
   { href: '/nosotros', label: 'Sobre nosotros' },
   { href: '/contacto', label: 'Contacto' },
 ];
@@ -97,6 +99,14 @@ const links = [
     opacity: 0.85;
     transition: color 0.25s, opacity 0.25s;
     position: relative;
+    white-space: nowrap;
+  }
+
+  /* Con 5 links y etiquetas largas ("Eventos & Campañas") el nav se
+     apretaba antes de llegar al breakpoint mobile. */
+  @media (max-width: 1200px) {
+    .nav-l { gap: 18px; }
+    .nav-l a { font-size: 10px; letter-spacing: 0.14em; }
   }
 
   .nav-l a::after {

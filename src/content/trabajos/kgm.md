@@ -8,8 +8,9 @@ video: ""
 cloudinaryId: null
 cover: null
 tagline: El desembarco de la marca en Uruguay.
-order: 32
+order: 35
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

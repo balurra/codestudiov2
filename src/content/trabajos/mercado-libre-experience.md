@@ -8,8 +8,9 @@ video: ""
 cloudinaryId: null
 cover: null
 tagline: Innovación, tecnología y grandes ideas en el Antel Arena.
-order: 33
+order: 36
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Producción

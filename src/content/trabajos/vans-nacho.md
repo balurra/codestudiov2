@@ -8,8 +8,9 @@ video: /videos/clips/vans-nacho.mp4
 cloudinaryId: codestudio/vans-x-nacho-3
 cover: /videos/posters/vans-nacho.jpg
 tagline: Skate, calle y zapatillas en un solo plano.
-order: 11
+order: 40
 publish: true
+highlight: false
 featured: false
 credits:
   - role: Dirección

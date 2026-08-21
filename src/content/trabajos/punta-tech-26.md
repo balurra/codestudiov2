@@ -8,8 +8,9 @@ video: /videos/clips/punta-tech-26.mp4
 cloudinaryId: codestudio/aftermoviepuntatech26-final
 cover: /videos/posters/punta-tech-26.jpg
 tagline: La cumbre de los techies de Latinoamérica, edición 18.
-order: 5
+order: 6
 publish: true
+highlight: true
 featured: true
 credits:
   - role: Producción

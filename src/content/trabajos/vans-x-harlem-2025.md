@@ -10,6 +10,7 @@ cover: /videos/posters/vans-x-harlem-2025.jpg
 tagline: Nuestro primer trabajo fuera del país, cubriendo Vans en Harlem.
 order: 2
 publish: true
+highlight: true
 featured: true
 credits:
   - role: Producción

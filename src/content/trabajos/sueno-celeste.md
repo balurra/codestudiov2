@@ -8,9 +8,10 @@ video: /videos/clips/sueno-celeste-code.mp4
 cloudinaryId: codestudio/sueno-celeste-vcode
 cover: /videos/posters/sueno-celeste-code.jpg
 tagline: Cuando el deporte se cruza con el territorio.
-order: 6
+order: 32
 publish: true
-featured: true
+highlight: false
+featured: false
 credits:
   - role: Dirección
     name: Mateo Rodríguez Murias

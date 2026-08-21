@@ -6,7 +6,23 @@ import { getCollection, type CollectionEntry } from 'astro:content';
 import { cldVideoUrl, cldVideoPoster } from '@lib/cloudinary';
 
 export type TrabajoEntry = CollectionEntry<'trabajos'>;
-export type TrabajoCategory = 'Shows' | 'Campañas';
+export type TrabajoCategory = 'Shows' | 'Campañas' | 'Fotografía';
+
+/**
+ * Las claves de `category` quedan cortas y estables (no rompen el contenido
+ * ya cargado ni las URLs); acá viven los nombres que ve el visitante.
+ */
+export const CATEGORY_LABELS: Record<TrabajoCategory, string> = {
+  Shows: 'Shows & Fiestas',
+  Campañas: 'Eventos & Campañas',
+  Fotografía: 'Fotografía Producto',
+};
+
+export const CATEGORY_SLUGS: Record<TrabajoCategory, string> = {
+  Shows: 'shows',
+  Campañas: 'campanas',
+  Fotografía: 'fotografia',
+};
 
 const FALLBACK_POSTER = '/hero-poster.jpg';
 
@@ -59,6 +75,12 @@ export async function getAllTrabajos(): Promise<TrabajoEntry[]> {
 export async function getFeaturedTrabajos(): Promise<TrabajoEntry[]> {
   const all = await getAllTrabajos();
   return all.filter((w) => w.data.featured === true);
+}
+
+/** Trabajos de la grilla "Proyectos destacados" del home. */
+export async function getHighlightTrabajos(): Promise<TrabajoEntry[]> {
+  const all = await getAllTrabajos();
+  return all.filter((w) => w.data.highlight === true);
 }
 
 /** Filtrados por categoría (o todos). */
